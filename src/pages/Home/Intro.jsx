@@ -7,15 +7,15 @@ const Intro = () => {
             <h1 className="text-xl font-semibold text-center text-white">
                 Hi, I am
             </h1>
-            <p className="text-secondary font-bold text-6xl text-center">
+            <p className="text-secondary font-bold text-6xl sm:text-3xl lg:text-4xl text-center">
                 Prashant Babu
             </p>
-            <p className="text-white text-6xl font-bold text-center">
+            <p className="text-white text-6xl font-bold sm:text-xl lg:text-4xl text-center">
                 I build things for the web
             </p>
             
             <div className="h-fit text-wrap">
-                <p className="text-white text-s font-medium text-opacity-60 w-3/4">
+                <p className="text-white text-s font-medium text-opacity-60 w-3/4 lg:w-full">
                     I’m a passionate Full Stack Web Developer specializing in the
                     MERN stack. As a fresher, I’m enthusiastic about joining a
                     dynamic team and contributing to impactful solutions. Let’s connect and

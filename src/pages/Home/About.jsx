@@ -18,8 +18,8 @@ const About = () => {
     return (
         <div className="mt-10">
             <SectionTitle title="About Me" />
-            <div className="flex gap-40 w-full">
-                <div className="h-[50vh] w-[50vh]">
+            <div className="flex gap-40 w-full sm:flex-col sm:gap-10 lg:gap-10 lg:flex-col xl:flex-col">
+                <div className="h-[50vh]">
                     <lottie-player
                         src="https://lottie.host/451d6e3b-fc13-4227-8de8-fe487b5004b3/mg9zWRzRRl.json"
                         background="##fff"
@@ -27,7 +27,7 @@ const About = () => {
                     ></lottie-player>
                 </div>
 
-                <div className="text-white w-2/4 text-wrap p-10 flex flex-col gap-10 font-medium opacity-80">
+                <div className=" sm:w-full lg:w-full xl:w-full text-white w-2/4 text-wrap p-10 flex flex-col gap-10 font-medium opacity-80">
                     <p>
                         🚀 Transforming from number cruncher to tech enthusiast! Hi there,
                         I'm Prashant Babu, a number-savvy professional with an
@@ -59,7 +59,7 @@ const About = () => {
 
             <div>
                 <SectionTitle title="Skills" />
-                <div className="flex flex-wrap gap-10">
+                <div className="flex flex-wrap gap-10 py-10">
                     {skills.map((skill) => (
                         <div
                             key={skill}
