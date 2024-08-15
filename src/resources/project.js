@@ -26,6 +26,7 @@ export const projectData = [
         description: "A clone of the AliExpress website, built using MERN stack. It is a work in progress project.",
         techStack: ["MongoDB", "Express", "React", "Node.js"],
         github: "https://github.com/PR45H/AliExpress-Clone",
+        deployed: "",
         image: "https://via.placeholder.com/150",
     },
 ]
