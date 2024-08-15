@@ -15,10 +15,10 @@ const Project = () => {
             
             <div className='flex gap-52 sm:gap-5 sm:flex-col py-10 '>
                 {/* display title */}
-                <div className='flex flex-col gap-5 sm:flex-row sm:text-sm mt-5'>
+                <div className='flex flex-col gap-5 w-52 sm:flex-row sm:text-sm sm:w-auto mt-5'>
                     
                     {projectData.map((project, i) => (
-                            <div className='p-5 bg-[#299c8311] rounded-xl cursor-pointer' onClick={()=>{handleItemClick(i)}}>
+                            <div className='p-4 bg-[#299c8311] rounded-xl cursor-pointer' onClick={()=>{handleItemClick(i)}}>
                             
                                 <h1 className={`${selectedItemIndex === i ? "text-tertiary":"text-white"}`}>{project.title}</h1>
                             </div>
@@ -35,7 +35,7 @@ const Project = () => {
                                     <p className='py-3 w-2/3'>{project.description}</p>
                                     <p className='py-3 w-2/3'>{project.techStack.join(", ")}</p>
                                     <a href={project.github} target='_blank' className='w-2/3 hover:text-selection underline py-5 block'>{project.github}</a>
-                                    <a href={project.deployed} target='_blank' className='w-2/3 hover:text-selection underline'>{project.deployed}</a>
+                                    {project.deployed === "" ? <div> <p>Work in progress, not deployed yet</p> </div>: <a href={project.deployed} target='_blank' className='w-2/3 hover:text-selection underline'>{project.deployed}</a>} 
                                 </div>
                                 <div>
                                     <img src={project.image} alt={project.title} className='h-52' />
