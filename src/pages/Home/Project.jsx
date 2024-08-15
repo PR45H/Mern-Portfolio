@@ -41,38 +41,38 @@ const Project = () => {
                 key={project.id}
                 className="text-white mt-5 flex items-center sm:mt-0 sm:flex-col sm:gap-10 sm:items-center lg:mt-0 lg:flex-col lg:gap-10 lg:items-center "
                 >
-                <div className="w-3/4 sm:w-full lg:w-full">
-                    <p className="py-3 w-2/3 sm:w-full lg:w-full">
-                    {project.description}
-                    </p>
-                    <p className="py-3 w-2/3 sm:w-full lg:w-full">
-                    {project.techStack.join(", ")}
-                    </p>
-                    <a
-                    href={project.github}
-                    target="_blank"
-                    className="w-2/3 hover:text-selection underline py-5 block sm:w-full"
-                    >
-                    {project.github}
-                    </a>
-                    {project.deployed === "" ? (
-                    <div>
-                        {" "}
-                        <p>Work in progress, not deployed yet</p>{" "}
-                    </div>
-                    ) : (
-                    <a
-                        href={project.deployed}
+                    <div className="w-3/4 sm:w-full lg:w-full">
+                        <p className="py-3 w-2/3 sm:w-full lg:w-full">
+                        {project.description}
+                        </p>
+                        <p className="py-3 w-2/3 sm:w-full lg:w-full">
+                        {project.techStack.join(", ")}
+                        </p>
+                        <a
+                        href={project.github}
                         target="_blank"
-                        className="w-2/3 hover:text-selection underline sm:w-full"
-                    >
-                        {project.deployed}
-                    </a>
-                    )}
-                </div>
-                <div>
-                    <img src={project.image} alt={project.title} className="h-52" />
-                </div>
+                        className="w-2/3 hover:text-selection underline py-5 block sm:w-full"
+                        >
+                        {project.github}
+                        </a>
+                        {project.deployed === "" ? (
+                        <div>
+                            {" "}
+                            <p>Work in progress, not deployed yet</p>{" "}
+                        </div>
+                        ) : (
+                        <a
+                            href={project.deployed}
+                            target="_blank"
+                            className="w-2/3 hover:text-selection underline sm:w-full"
+                        >
+                            {project.deployed}
+                        </a>
+                        )}
+                    </div>
+                    <div>
+                        <img src={project.image} alt={project.title} className="h-52" />
+                    </div>
                 </div>
             ) : null;
             })}
