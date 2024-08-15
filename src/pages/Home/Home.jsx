@@ -5,6 +5,7 @@ import About from './About'
 import Project from './Project'
 import Contact from './Contact'
 import Footer from './Footer'
+import LeftSider from './LeftSider'
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <Project />
             <Contact />
             <Footer />
+            <LeftSider />
         </div>
     )
 }
