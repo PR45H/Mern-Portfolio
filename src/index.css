@@ -18,6 +18,9 @@
   background-color: #299c8311;
   height: 20px;
 }
+i:hover{
+  color: rgba(255, 255, 255, 0.704);
+}
 
 
 
