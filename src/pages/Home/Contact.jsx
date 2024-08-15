@@ -18,8 +18,8 @@ const Contact = () => {
                 <div className="flex flex-col gap-1 text-[#00CCCC] text-xl">
                     <h1> {'{'} </h1>
                     {/* to access user object. */}
-                    {Object.keys(user).map((key) => (
-                        <h1 className='ml-5'>
+                    {Object.keys(user).map((key , i) => (
+                        <h1 key={i} className='ml-5'>
                             <span>{ key} : </span>
                             <span>{user[key]}</span>
                         </h1>

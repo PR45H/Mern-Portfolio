@@ -18,6 +18,7 @@ const Project = () => {
             <div className="flex flex-col gap-5 w-52 sm:overflow-x-scroll sm:flex-row sm:text-sm sm:w-full lg:flex-row lg:text-sm lg:w-full xl:flex-row xl:text-sm xl:w-full mt-5">
             {projectData.map((project, i) => (
                 <div
+                key={project.id}
                 className="p-4 bg-[#299c8311] rounded-xl cursor-pointer sm:w-3/4"
                 onClick={() => {
                     handleItemClick(i);
