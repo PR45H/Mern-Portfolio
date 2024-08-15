@@ -21,7 +21,7 @@ const Contact = () => {
                     {Object.keys(user).map((key , i) => (
                         <h1 key={i} className='ml-5'>
                             <span>{ key} : </span>
-                            <span>{user[key]}</span>
+                            <span>"{user[key]}"</span>
                         </h1>
                     ))}
                     <h1> {'}'} </h1>
