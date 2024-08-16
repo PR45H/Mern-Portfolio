@@ -63,6 +63,18 @@ const projectSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    projectUrl: {
+        type: String,
+        required: true
+    },
+    githubUrl: {
+        type: String,
+        required: true
+    },
+    techStack: {
+        type: Array,
+        required: true
+    },
 });
 
 const contactSchema = new mongoose.Schema({
