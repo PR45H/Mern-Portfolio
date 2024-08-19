@@ -3,10 +3,15 @@ const app = express();
 require('dotenv').config();
 const port = process.env.PORT || 5000;
 const connection = require('./config/db.connection');
+const portfolioRouter = require('./routes/portfolioRouter');
+
+
+app.use(express.json());
+app.use('/api/portfolio', portfolioRouter);
 
 // health check
 app.get('/', (req, res) => {
-    res.send('Server responsed')
+    res.send('Health check complete : Server responsed')
 })
 
 app.listen(port, async () => {
