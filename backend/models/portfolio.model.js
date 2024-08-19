@@ -43,7 +43,7 @@ const aboutSchema = new mongoose.Schema({
 });
 
 const skillSchema = new mongoose.Schema({
-    skillName: {
+    skills: {
         type: Array,
         required: true
     },
