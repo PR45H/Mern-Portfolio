@@ -5,6 +5,7 @@ import axios from 'axios'
 import './App.css'
 
 function App() {
+  // connect to the backend
   const getPortfolioData = async () => {
     try {
       const response = await axios.get('/api/portfolio/get-portfolio-data');
