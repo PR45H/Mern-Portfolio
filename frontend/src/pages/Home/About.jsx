@@ -8,7 +8,7 @@ const About = () => {
     const { about, skills } = portfolioData
     const { lottieUrl, description1, description2, description3, description4 } = about[0]
     
-    // Flatten the skills array
+    // Flatten the skills array used help of co-pilot
     const flattenedSkills = skills.reduce((acc, item) => acc.concat(item.skills), []);
 
     return (
@@ -17,7 +17,7 @@ const About = () => {
             <div className="flex gap-40 w-full sm:flex-col sm:gap-10 lg:gap-10 lg:flex-col xl:flex-col">
                 <div className="h-[50vh]">
                     <lottie-player
-                        src={lottieUrl}
+                        src={lottieUrl || ""}
                         background="##fff"
                         speed="1"
                     ></lottie-player>
@@ -25,17 +25,17 @@ const About = () => {
 
                 <div className=" sm:w-full lg:w-full xl:w-full text-white w-2/4 text-wrap p-10 flex flex-col gap-10 font-medium opacity-80">
                     <p>
-                        {description1}
+                        {description1 || "description not available"}
                     </p>
                     <p>
-                        {description2}
+                        {description2 || "description not available"}
                     </p>
                     <p>
-                        {description3}
+                        {description3 || "description not available"}
                     </p>
 
                     <p>
-                        {description4}
+                        {description4 || "description not available"}
                     </p>
                 </div>
             </div>
@@ -48,7 +48,7 @@ const About = () => {
                             key={i}
                             className="text-tertiary font-medium border border-tertiary px-10 py-4 rounded-md mt-8"
                         >
-                            {item}
+                            {item || "skill data not available"}
                         </div>
                     ))}
                 </div>
