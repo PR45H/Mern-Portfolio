@@ -4,7 +4,8 @@ import Home from './pages/Home/Home'
 import axios from 'axios'
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { SetPortfolioData } from './redux/rootSlice'
+import { HideLoading, SetPortfolioData, ShowLoading } from './redux/rootSlice'
+import Loader from './components/Loader'
 
 function App() {
 
@@ -13,10 +14,13 @@ function App() {
   const dispatch = useDispatch()
   const getPortfolioData = async () => {
     try {
+      dispatch(ShowLoading())
       const response = await axios.get('/api/portfolio/get-portfolio-data');
       dispatch(SetPortfolioData(response.data))
+      dispatch(HideLoading())
     } catch (error) {
       console.error(error)
+      dispatch(HideLoading())
     }
   }
 
@@ -27,9 +31,11 @@ function App() {
     }
   },[portfolioData])
 
+
   return (
     <div>
       <BrowserRouter>
+        {isLoading && <Loader /> }
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
