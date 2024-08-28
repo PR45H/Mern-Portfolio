@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import SectionTitle from "../../components/SectionTitle";
-import { projectData } from "../../resources/project";
+import { useSelector } from "react-redux";
 
 const Project = () => {
     const [selectedItemIndex, setSelectedItemIndex] = useState(0);
@@ -9,16 +9,20 @@ const Project = () => {
     const handleItemClick = (index) => {
         setSelectedItemIndex(index);
     };
+
+    const { portfolioData } = useSelector((state) => state.root)
+    const {projects} = portfolioData
+
     return (
         <div>
         <SectionTitle title={"Projects"} />
 
         <div className="flex gap-52 sm:gap-5 sm:flex-col lg:gap-5 lg:flex-col xl:gap-5 xl:flex-col py-10 ">
             {/* display title */}
-            <div className="flex flex-col gap-5 w-52 sm:overflow-x-scroll sm:flex-row sm:text-sm sm:w-full lg:flex-row lg:text-sm lg:w-full xl:flex-row xl:text-sm xl:w-full mt-5">
-            {projectData.map((project, i) => (
+            <div className="flex flex-col gap-5 w-60 sm:overflow-x-scroll sm:flex-row sm:text-sm sm:w-full lg:flex-row lg:text-sm lg:w-full xl:flex-row xl:text-sm xl:w-full mt-5">
+            {projects.map((project, i) => (
                 <div
-                key={project.id}
+                key={i}
                 className="p-4 bg-[#299c8311] rounded-xl cursor-pointer sm:w-3/4"
                 onClick={() => {
                     handleItemClick(i);
@@ -36,10 +40,10 @@ const Project = () => {
             </div>
 
             {/* display description, techStack, github, deployed, image */}
-            {projectData.map((project, i) => {
+            {projects.map((project, i) => {
             return selectedItemIndex === i ? (
                 <div
-                key={project.id}
+                key={project._id}
                 className="text-white mt-5 flex items-center sm:mt-0 sm:flex-col sm:gap-10 sm:items-center lg:mt-0 lg:flex-col lg:gap-10 lg:items-center "
                 >
                     <div className="w-3/4 sm:w-full lg:w-full">
