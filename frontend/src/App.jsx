@@ -6,6 +6,7 @@ import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { HideLoading, SetPortfolioData, ShowLoading } from './redux/rootSlice'
 import Loader from './components/Loader'
+import Index from './pages/Admin/Index'
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
         {isLoading && <Loader /> }
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<Index />} />
         </Routes>
       </BrowserRouter>
     </div>
