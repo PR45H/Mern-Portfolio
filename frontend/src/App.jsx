@@ -35,13 +35,13 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter>
-        {isLoading && <Loader /> }
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/admin" element={<Index />} />
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          {isLoading && <Loader /> }
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/admin" element={<Index />} />
+          </Routes>
+        </BrowserRouter>
     </div>
   )
 }
