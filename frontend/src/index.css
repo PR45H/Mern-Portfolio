@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  background: #0A192F;
+}
+
 *{
   font-family: "Montserrat", sans-serif;
 }
@@ -69,7 +73,7 @@ i:hover{
   }
 }
 
-input, textarea{
+/* input, textarea{
   height: 40px;
   border: 1px solid rgba(128, 128, 128, 0.427);
   border-radius: 5px;
@@ -80,5 +84,5 @@ input, textarea{
 }
 textarea{
   height: 100px;
-}
+} */
 
