@@ -73,16 +73,16 @@ i:hover{
   }
 }
 
-/* input, textarea{
+textarea{
   height: 40px;
   border: 1px solid rgba(128, 128, 128, 0.427);
   border-radius: 5px;
   padding-left: 15px;
   outline: none;
-  width: 50%;
+  width: 100%;
   margin: auto;
 }
 textarea{
   height: 100px;
-} */
+}
 
