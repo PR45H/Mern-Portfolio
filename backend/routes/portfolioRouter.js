@@ -27,4 +27,13 @@ portfolioRouter.get('/get-portfolio-data', async (req, res) => {
     }
 });
 
+// api route to update the portfolio data
+portfolioRouter.post('/update-portfolio-data', async (req, res) => {
+    try {
+        const { intro, about, skills, projects, contact } = req.body;
+    } catch (error) {
+        res.status(500).send({ message: error.message });
+    }
+});
+
 module.exports = portfolioRouter;
