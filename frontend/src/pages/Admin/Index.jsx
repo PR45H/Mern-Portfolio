@@ -1,36 +1,35 @@
 import React from 'react'
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import AdminIntro from './AdminIntro'
 import Header from '../../components/Header'
 import { useSelector } from 'react-redux'
+import { Tabs } from 'antd'
 
-const index = () => {
-    const {portfolioData} = useSelector((state)=> state.root)
+const Index = () => {
+    const { portfolioData } = useSelector((state) => state.root)
+    const items = [
+            {
+            key: '1',
+            label: 'Admin Intro',
+            children: <AdminIntro />,
+            },
+            {
+            key: '2',
+            label: 'Tab 2',
+            children: 'Content of Tab Pane 2',
+            },
+            {
+            key: '3',
+            label: 'Tab 3',
+            children: 'Content of Tab Pane 3',
+            },
+    ];
     return (
-        <div>
+        <div className=''>
             <Header />
-            {portfolioData && <Tabs className='mt-5 p-5 sm:' colorScheme='teal' >
-                <TabList >
-                    <Tab>Admin Intro</Tab>
-                    <Tab>Admin About</Tab>
-                    <Tab>Three</Tab>
-                </TabList>
-
-                <TabPanels>
-                    <TabPanel>
-                        <AdminIntro />
-                    </TabPanel>
-                    <TabPanel>
-                        <p>two!</p>
-                    </TabPanel>
-                    <TabPanel>
-                        <p>three!</p>
-                    </TabPanel>
-                </TabPanels>
-            </Tabs>}
+            {portfolioData && <Tabs defaultActiveKey="1" items={items} />}
             
         </div>
     )
 }
 
-export default index
+export default Index

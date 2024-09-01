@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Outlet } from 'react-router-dom'; // Import Outlet to render child routes
+import { Route, Routes, BrowserRouter } from 'react-router-dom'; // Import Outlet to render child routes
 import axios from 'axios';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,20 +7,7 @@ import { HideLoading, SetPortfolioData, ShowLoading } from './redux/rootSlice';
 import Loader from './components/Loader';
 import Home from './pages/Home/Home';
 import Index from './pages/Admin/Index';
-import { createActions } from './pages/Admin/AdminIntro';
-import { createBrowserRouter } from 'react-router-dom';
 
-// Define the routes using createBrowserRouter
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />, // Use App as the parent layout component
-    children: [
-      { path: '/', element: <Home /> },
-      { path: '/admin', element: <Index />, action: createActions }, // Add action here
-    ],
-  },
-]);
 
 function App() {
   const { portfolioData, isLoading } = useSelector((state) => state.root);
@@ -33,7 +20,7 @@ function App() {
       dispatch(SetPortfolioData(response.data));
       dispatch(HideLoading());
     } catch (error) {
-      console.error(error);
+      console.log(error);
       dispatch(HideLoading());
     }
   };
@@ -45,10 +32,14 @@ function App() {
   }, [portfolioData]);
 
   return (
-    <div>
-      {isLoading && <Loader />}
-      {/* The Outlet component renders the matched child route's component */}
-      <Outlet />
+    <div className='selection:bg-selection'>
+        <BrowserRouter>
+          {isLoading && <Loader /> }
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/admin" element={<Index />} />
+          </Routes>
+        </BrowserRouter>
     </div>
   );
 }
