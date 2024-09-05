@@ -3,7 +3,7 @@ import rootSlice from "./rootSlice";
 
 const reducer = combineReducers({
     root: rootSlice
-})
+});
 
 const store = configureStore({
     reducer
