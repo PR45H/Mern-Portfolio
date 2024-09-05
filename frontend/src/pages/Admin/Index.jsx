@@ -3,6 +3,7 @@ import AdminIntro from './AdminIntro'
 import Header from '../../components/Header'
 import { useSelector } from 'react-redux'
 import { Tabs } from 'antd'
+import AdminAbout from './AdminAbout'
 
 const Index = () => {
     const { portfolioData } = useSelector((state) => state.root)
@@ -14,8 +15,8 @@ const Index = () => {
             },
             {
             key: '2',
-            label: 'Tab 2',
-            children: 'Content of Tab Pane 2',
+            label: 'Admin About',
+            children: <AdminAbout />,
             },
             {
             key: '3',
@@ -24,9 +25,9 @@ const Index = () => {
             },
     ];
     return (
-        <div className=''>
+        <div>
             <Header />
-            {portfolioData && <Tabs defaultActiveKey="1" items={items} />}
+            {portfolioData && <Tabs defaultActiveKey="1" items={items} className='p-5' />}
             
         </div>
     )
