@@ -5,10 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background: #0A192F;
-  
-}
+
 
 *{
   font-family: "Montserrat", sans-serif;
