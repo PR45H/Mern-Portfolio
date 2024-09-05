@@ -82,5 +82,6 @@ input,textarea{
 }
 textarea{
   height: 100px;
+  padding: 15px;
 }
 
