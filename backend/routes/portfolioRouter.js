@@ -27,12 +27,24 @@ portfolioRouter.get('/get-portfolio-data', async (req, res) => {
     }
 });
 
-// api route to update the portfolio data
-portfolioRouter.post('/update-portfolio-data', async (req, res) => {
+// api route to update the intro data
+portfolioRouter.post('/update-intro', async (req, res) => {
     try {
-        const { intro, about, skills, projects, contact } = req.body;
+        const updatedData = await Intro.findOneAndUpdate(
+            {_id: req.body._id},
+            {
+                welcomeText: req.body.welcomeText,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                caption: req.body.caption,
+                description: req.body.description
+            }
+        )
+        res.status(200).send({data: updatedData, message: 'Intro updated successfully'})
+
     } catch (error) {
-        res.status(500).send({ message: error.message });
+        res.status(500).send({message: error.message});
+        
     }
 });
 
