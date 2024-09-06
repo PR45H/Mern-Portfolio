@@ -1,5 +1,5 @@
 const portfolioRouter = require("express").Router();
-const { healthCheck, getPortfolioData, updateIntro, updateAbout } = require("../config/portfolio.controller")
+const { healthCheck, getPortfolioData, updateIntro, updateAbout, updateSkills } = require("../config/portfolio.controller")
 // api health check route
 portfolioRouter.get('/', healthCheck)
 
@@ -11,5 +11,8 @@ portfolioRouter.post('/update-intro', updateIntro);
 
 // api route to update the about data
 portfolioRouter.post('/update-about', updateAbout);
+
+// api route to update the skills data
+portfolioRouter.post('/update-skills', updateSkills);
 
 module.exports = portfolioRouter;

@@ -63,7 +63,21 @@ const updateAbout = async (req, res) => {
     } catch (error) {
         res.status(500).send({message: error});
     }
-    
 }
 
-module.exports = { healthCheck, getPortfolioData, updateIntro, updateAbout };
+// api route to update the skills data
+const updateSkills = async (req, res) => {
+    try {
+        const updatedData = await Skill.findOneAndUpdate(
+            { _id: req.body._id },
+            {
+                skills: req.body.skills
+            }
+        )
+        res.status(200).send({updatedData, message: "Skills updated successfully"})
+    } catch (error) {
+        res.status(500).send({message: error});
+    }
+}
+
+module.exports = { healthCheck, getPortfolioData, updateIntro, updateAbout, updateSkills };
