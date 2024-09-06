@@ -7,7 +7,7 @@ const About = () => {
     const { portfolioData } = useSelector((state) => state.root)
     const { about, skills } = portfolioData
     const { lottieUrl, description1, description2, description3, description4 } = about[0]
-    
+
     // Flatten the skills array used help of co-pilot
     const flattenedSkills = skills.reduce((acc, item) => acc.concat(item.skills), []);
 
@@ -48,6 +48,8 @@ const About = () => {
                             key={i}
                             className="text-tertiary font-medium border border-tertiary px-10 py-4 rounded-md mt-8"
                         >
+                            {console.log(item)}
+                            
                             {item || "skill data not available"}
                         </div>
                     ))}

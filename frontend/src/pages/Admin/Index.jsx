@@ -4,24 +4,25 @@ import Header from '../../components/Header'
 import { useSelector } from 'react-redux'
 import { Tabs } from 'antd'
 import AdminAbout from './AdminAbout'
+import AdminSkills from './AdminSkills'
 
 const Index = () => {
     const { portfolioData } = useSelector((state) => state.root)
     const items = [
             {
             key: '1',
-            label: 'Admin Intro',
+            label: 'Intro',
             children: <AdminIntro />,
             },
             {
             key: '2',
-            label: 'Admin About',
+            label: 'About',
             children: <AdminAbout />,
             },
             {
             key: '3',
-            label: 'Tab 3',
-            children: 'Content of Tab Pane 3',
+            label: 'Skills',
+            children: <AdminSkills />,
             },
     ];
     return (
