@@ -18,7 +18,7 @@ const AdminAbout = () => {
                 _id: about[0]._id
             })
             dispatch(HideLoading())
-            console.log(response)
+
             if (response.data.message === 'About updated successfully') {
                 message.success(response.data.message)
             } else {

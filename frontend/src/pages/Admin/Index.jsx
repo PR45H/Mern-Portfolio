@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { Tabs } from 'antd'
 import AdminAbout from './AdminAbout'
 import AdminSkills from './AdminSkills'
+import AdminProject from './AdminProject'
 
 const Index = () => {
     const { portfolioData } = useSelector((state) => state.root)
@@ -23,6 +24,11 @@ const Index = () => {
             key: '3',
             label: 'Skills',
             children: <AdminSkills />,
+            },
+            {
+            key: '4',
+            label: 'Projects',
+            children: <AdminProject />,
             },
     ];
     return (

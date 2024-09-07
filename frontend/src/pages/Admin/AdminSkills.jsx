@@ -1,14 +1,13 @@
-import { Form } from 'antd'
+import { Form, message } from 'antd'
 import axios from 'axios'
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 
 const AdminSkills = () => {
     const { portfolioData } = useSelector((state) => state.root)
-    console.log(portfolioData.skills[0]);
     
     const onFinish = async(values) => {
-        console.log(values);
+        
         try {
             const skillsArray = values.skills.split(',').map(skill => skill.trim());
             const response = await axios.post('/api/portfolio/update-skills', {
@@ -16,9 +15,15 @@ const AdminSkills = () => {
                 skills: skillsArray,
                 _id: portfolioData.skills[0]._id
             })
-            console.log(response);
-        } catch (error) {
+            // console.log(response);
+            if (response.data.message) {
+                message.success(response.data.message)
+            } else {
+                message.error(response.data.message)
+            }
             
+        } catch (error) {
+            console.log(error)
         }
     }
     
