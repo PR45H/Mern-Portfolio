@@ -74,7 +74,7 @@ const updateSkills = async (req, res) => {
                 skills: req.body.skills
             }
         )
-        res.status(200).send({updatedData, message: "Skills updated successfully"})
+        res.status(200).send({ updatedData, message: "Skills updated successfully"})
     } catch (error) {
         res.status(500).send({message: error});
     }

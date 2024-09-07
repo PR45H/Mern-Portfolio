@@ -15,4 +15,6 @@ portfolioRouter.post('/update-about', updateAbout);
 // api route to update the skills data
 portfolioRouter.post('/update-skills', updateSkills);
 
+// api routes to update the projects data
+
 module.exports = portfolioRouter;
