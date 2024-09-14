@@ -80,4 +80,33 @@ const updateSkills = async (req, res) => {
     }
 }
 
-module.exports = { healthCheck, getPortfolioData, updateIntro, updateAbout, updateSkills };
+// api routes to update the projects data
+const updateProjects = async (req, res) => {
+    try {
+        const updatedData = await Project.findOneAndUpdate(
+            { _id: req.body._id },
+            {
+                title: req.body.title,
+                description: req.body.description,
+                techStack: req.body.techStack,
+                github: req.body.github,
+                deployed: req.body.deployed,
+                image: req.body.image
+            }
+        )
+        if(!updatedData) {
+            return res.status(404).send({message: "Project not found"})
+        } else {
+            
+            res.status(200).send({ updatedData, message: "Projects updated successfully"})
+        }
+        
+    } catch (error) {
+        res.status(500).send({
+            message: error.message
+        
+        });
+    }
+}
+
+module.exports = { healthCheck, getPortfolioData, updateIntro, updateAbout, updateSkills, updateProjects };
