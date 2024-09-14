@@ -34,7 +34,7 @@ const Index = () => {
     return (
         <div>
             <Header />
-            {portfolioData && <Tabs defaultActiveKey="1" items={items} className='p-5' />}
+            {portfolioData && <Tabs defaultActiveKey="1" items={items} className='p-5' centered />}
             
         </div>
     )
