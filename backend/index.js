@@ -6,7 +6,7 @@ const port = process.env.PORT || 5000;
 const connection = require('./config/db.connection');
 const portfolioRouter = require('./routes/portfolioRouter');
 
-app.use(cors());
+app.use(cors({ origin: 'https://prashant-babu-portfolio.netlify.app/' }));
 app.use(express.json());
 app.use('/api/portfolio', portfolioRouter);
 
