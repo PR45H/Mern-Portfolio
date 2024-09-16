@@ -97,7 +97,6 @@ const updateProjects = async (req, res) => {
         if(!updatedData) {
             return res.status(404).send({message: "Project not found"})
         } else {
-            
             res.status(200).send({ updatedData, message: "Projects updated successfully"})
         }
         
