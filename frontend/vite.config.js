@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   server: {
@@ -9,8 +8,16 @@ export default defineConfig({
       '/api': {
         target: 'https://mern-portfolio-m7w8.onrender.com',
         changeOrigin: true,
-        // rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
-  }
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: './index.html',
+      },
+    },
+    outDir: 'dist',
+  },
+  publicDir: 'public',
 })
