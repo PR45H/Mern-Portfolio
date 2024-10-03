@@ -9,6 +9,7 @@ import Home from './pages/Home/Home';
 import Index from './pages/Admin/Index';
 
 
+
 function App() {
   const { portfolioData, isLoading } = useSelector((state) => state.root);
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ function App() {
   const getPortfolioData = async () => {
     try {
       dispatch(ShowLoading());
-      const response = await axios.get('https://mern-portfolio-m7w8.onrender.com/api/portfolio/get-portfolio-data');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/portfolio/get-portfolio-data`);
       dispatch(SetPortfolioData(response.data));
       dispatch(HideLoading());
     } catch (error) {
