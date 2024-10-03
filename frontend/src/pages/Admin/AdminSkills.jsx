@@ -10,7 +10,7 @@ const AdminSkills = () => {
         
         try {
             const skillsArray = values.skills.split(',').map(skill => skill.trim());
-            const response = await axios.post('/api/portfolio/update-skills', {
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/update-skills`, {
                 ...values,
                 skills: skillsArray,
                 _id: portfolioData.skills[0]._id

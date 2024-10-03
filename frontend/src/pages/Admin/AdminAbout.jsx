@@ -13,7 +13,7 @@ const AdminAbout = () => {
 
         try {
             dispatch(ShowLoading())
-            const response = await axios.post('/api/portfolio/update-about', {
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/update-about`, {
                 ...values,
                 _id: about[0]._id
             })

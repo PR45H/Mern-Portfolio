@@ -48,7 +48,7 @@ const About = () => {
                             key={i}
                             className="text-tertiary font-medium border border-tertiary px-10 py-4 rounded-md mt-8"
                         >
-                            {console.log(item)}
+                            {/* {console.log(item)} */}
                             
                             {item || "skill data not available"}
                         </div>

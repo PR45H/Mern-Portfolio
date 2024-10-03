@@ -13,7 +13,7 @@ const AdminIntro = () => {
     console.log(values)
     try {
       dispatch(ShowLoading())
-      const response = await axios.post('/api/portfolio/update-intro', {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/portfolio/update-intro`, {
         // send the whole object with the updated values
         ...values,
         // send the id of the object to be updated
