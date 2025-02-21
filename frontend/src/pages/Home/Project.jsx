@@ -63,7 +63,7 @@ const Project = () => {
                         {project.deployed === "" ? (
                         <div>
                             {" "}
-                            <p>Work in progress, not deployed yet</p>{" "}
+                            <p>Not deployed</p>{" "}
                         </div>
                         ) : (
                         <a
